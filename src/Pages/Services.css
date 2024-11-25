@@ -1,0 +1,300 @@
+/* Container styles for horizontal scrolling */
+.services-container1 {
+    gap: 16px;
+    padding: 40px;
+    white-space: nowrap;
+}
+
+.services-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.services-container2 {
+    overflow-x: auto;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for subtlety */
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Circle-shaped button */
+    font-size: 24px; /* Slightly smaller size for elegance */
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    line-height: 1;
+    transition: color 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.scroll-arrow.left {
+    left: 10px; /* Adds a little more padding for alignment */
+}
+
+.scroll-arrow.right {
+    right: 10px;
+}
+
+.scroll-arrow:hover {
+    color: white;
+    background-color: #22CC9D; 
+}
+.scroll-arrow:focus {
+    outline: 2px solid #22CC9D;
+}
+.scroll-progress-bar {
+    position: relative;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 8px; 
+    background-color: #D9D9D9; 
+    border-radius: 152px; 
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 8px !important;
+    background-color: #22CC9D !important; /* Green color for the progress fill */
+    border-radius: 152px !important; /* Match border-radius to scroll-progress-bar */
+  }
+  
+.services-container2 {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 20px;
+}
+
+.services-container2.scrolled {
+    margin: 0; 
+}
+
+/* Subheading styles */
+.servicesubheading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #22CC9D;
+}
+
+/* Heading styles */
+.serviceheading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #5C5C5C;
+}
+
+.service-card {
+    min-width: 280px;
+    max-width: 410px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1; /* Start hidden */
+    transform: translateY(30px); /* Initial slide-up position */
+}
+
+
+/* Image container within the card */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add semi-transparent background */
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Title styling for the image container */
+.image-container h3 {
+    position: absolute;
+    top: 22px;
+    left: 8px;
+    color: white;
+    padding: 4px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    max-width: 90%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    z-index: 2;
+}
+
+/* Text content styling */
+.service-card p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    text-align: justify;
+    color: #000000;
+    white-space: normal;
+    margin-top: 6%;
+}
+
+.services-container2::-webkit-scrollbar {
+    display: none;
+}
+
+.service-card.even {
+    transform: translateY(-10px) ;
+}
+
+.service-card.odd {
+    transform: translateY(30px) !important;
+}
+
+
+/* Smaller screens (phones and small tablets) */
+@media (max-width: 600px) {
+    .servicesubheading {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .serviceheading {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .services-container1 {
+        gap: 16px;
+        padding: 20px;
+        white-space: nowrap;
+    }
+    .services-container2 {
+        gap: 16px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+
+
+    .service-card {
+        min-width: 240px;
+        padding: 16px;
+    }
+
+    .image-container {
+        height: 280px;
+    }
+
+    .image-container h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .service-card p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+/* Medium screens (tablets and small desktops) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .servicesubheading {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .serviceheading {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .service-card {
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    .image-container {
+        height: 320px;
+    }
+
+    .image-container h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .service-card p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    .servicesubheading {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    .serviceheading {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .service-card {
+        min-width: 430px;
+        max-width: 410px;
+        padding: 20px;
+    }
+
+    .image-container {
+        height: 360px;
+    }
+
+    .image-container h3 {
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    .service-card p {
+        font-size: 20px;
+        line-height: 35px;
+    }
+}
+

@@ -1,0 +1,281 @@
+/* Container styles for horizontal scrolling */
+.hrm-services-container1 {
+    gap: 16px;
+    padding: 40px;
+    white-space: nowrap;
+}
+.hrm-scroll-arrow {
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for subtlety */
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Circle-shaped button */
+    font-size: 24px; /* Slightly smaller size for elegance */
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    line-height: 1;
+    transition: color 0.3s ease, background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+.hrm-scroll-arrow.left {
+    left: 10px; /* Adds a little more padding for alignment */
+}
+
+.hrm-scroll-arrow.right {
+    right: 10px;
+}
+
+.hrm-scroll-arrow:hover {
+    color: white;
+    background-color: #fea116; /* Subtle orange highlight on hover */
+}
+.hrm-scroll-arrow:focus {
+    outline: 2px solid #fea116; /* Add focus outline */
+}
+.hrm-services-container2 {
+    display: flex;
+    overflow-x: auto;
+    gap: 22px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    overflow-y: hidden;
+    padding: 20px;
+}
+
+.hrm-services-container2.scrolled {
+    margin: 0; 
+}
+
+/* Subheading styles */
+.hrm-servicesubheading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #22CC9D;
+    width: 50%;
+}
+
+/* Heading styles */
+.hrm-serviceheading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #22CC9D;
+}
+
+/* Each card's base layout */
+.hrm-service-card {
+    min-width: 280px;
+    max-width: 410px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Image container within the card */
+.hrm-image-container {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.hrm-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add semi-transparent background */
+.hrm-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Title styling for the image container */
+.hrm-h3 {
+    position: absolute;
+    
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    max-width: 90%;
+    white-space: normal;
+    z-index: 2;
+    margin-top: 4%;
+}
+
+/* Text content styling */
+.hrm-service-card p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    text-align: justify;
+    color: #000000;
+    white-space: normal;
+    margin-top: 20%;
+}
+.hrm-scroll-progress-bar {
+    position: relative;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 8px; 
+    background-color: #D9D9D9; 
+    border-radius: 152px; 
+    overflow: hidden;
+  }
+/* Offset styles for odd and even cards */
+.hrm-service-card.even {
+    transform: translateY(-10px) ;
+}
+
+.hrm-service-card.odd {
+    transform: translateY(30px) !important;
+}
+
+/* Media Queries for Responsive Adjustments */
+
+/* Smaller screens (phones and small tablets) */
+@media (max-width: 600px) {
+    .hrm-servicesubheading {
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    .hrm-serviceheading {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .hrm-services-container1 {
+        gap: 16px;
+        padding: 20px;
+        white-space: nowrap;
+    }
+    .hrm-services-container2 {
+        gap: 16px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+
+
+    .hrm-service-card {
+        min-width: 240px;
+        padding: 16px;
+    }
+
+    .hrm-image-container {
+        height: 280px;
+    }
+
+    .hrm-h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .hrm-service-card p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 33%;
+    }
+}
+
+/* Medium screens (tablets and small desktops) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .hrm-servicesubheading {
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    .hrm-serviceheading {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .hrm-service-card {
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    .hrm-image-container {
+        height: 320px;
+    }
+
+    .hrm-h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .hrm-service-card p {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 33%  ;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1025px) {
+    .hrm-servicesubheading {
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    .hrm-serviceheading {
+        font-size: 32px;
+        line-height: 30px;
+    }
+
+    .hrm-service-card {
+        min-width: 500px;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .hrm-image-container {
+        height: 260px;
+    }
+
+    .hrm-h3 {
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    .hrm-service-card p {
+        font-size: 20px;
+        line-height: 35px;
+    }
+}
+
+/* Hide scrollbar for smoother scroll effect */
+.hrm-services-container2::-webkit-scrollbar {
+    display: none;
+}
+
+

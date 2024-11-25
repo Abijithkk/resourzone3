@@ -1,0 +1,121 @@
+.hrm1-container {
+    padding: 0 20px;
+    background-color: #223F4E;
+    overflow-x: hidden;
+}
+
+.hrm1row {
+    padding: 34px;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hrm1p {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 29px; /* Use rem for responsive font size */
+    font-weight: 600;
+    line-height: 1.5; /* Adjust line height for better readability */
+    color: #FFFFFF;
+    text-align: justify;
+}
+
+.hrm1button {
+    width: 40%;
+    max-width: 200px; /* Set a max-width for larger screens */
+    border-radius: 12px;
+    color: white;
+    border: 2px solid #22CC9D;
+    background-color: #223F4E;
+    padding: 10px;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 20px; /* Use rem for responsive font size */
+    font-weight: 600;
+    text-align: center;
+    margin-top: 16%;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Use full height */
+}
+
+.image-top {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 16px;
+}
+
+.bottom-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically for small screens */
+    margin-top: 5%;
+}
+
+.bottom-text {
+    width: 100%; /* Full width for smaller screens */
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 14px; /* Use rem for responsive font size */
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #22CC9D;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: inherit; /* Space between text and image */
+}
+
+.image-bottom {
+    width: 100%; /* Full width for small screens */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .bottom-content {
+        flex-direction: row; /* Align items side by side on medium and larger screens */
+        gap: 20px; /* Space between text and image */
+    }
+
+    .bottom-text {
+        width: 75%; /* Take 75% of the bottom row's width */
+    }
+
+    .image-bottom {
+        width: 25%; /* Take 25% of the bottom row's width */
+    }
+    
+}
+
+@media (min-width: 1300px) {
+    .hrm1p {
+        font-size: 40px; 
+    }
+    .hrm1button {
+        font-size: 24px; 
+    }
+    .bottom-text {
+        font-size: 20px;
+    }
+}
+@media  (max-width:768px){
+    .hrm1row{
+        padding: 10px;
+    }
+    .image-top{
+        margin-top: 5%;
+    }
+    .image-bottom{
+        margin-top: 4%;
+    }
+    .hrm1button{
+        width: 65%;
+    }
+    .hrm1p{
+        font-size: 30px;
+    }
+}

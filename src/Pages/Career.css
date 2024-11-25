@@ -1,0 +1,224 @@
+.career-header {
+  background-color: #097B79;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.career-page{
+  overflow-x: hidden;
+}
+.search-bar {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .search-bar input {
+    padding: 8px 15px;
+    font-size: 0.9rem;  /* Smaller font size for mobile */
+  }
+  .search-bar{
+    padding: 0px;
+  }
+}
+
+
+.careerheading {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 96px;
+  letter-spacing: -0.03em;
+}
+
+.careerp {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.cardhead {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #5C5C5C;
+}
+
+.cardsecondhead {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #22CC9D;
+}
+
+.card-section {
+  padding: 0;
+}
+
+.career-card {
+  border-radius: 8px;
+  padding: 15px;
+  border: 1px solid #E3E3E3;
+  overflow-x: hidden;
+  
+}
+
+.careerbutton {
+  background-color: #22CC9D;
+  color: white;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 20px;
+}
+
+.job {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.job-detail-headers, .job-detail-values {
+  display: flex;
+  justify-content: space-between;
+}
+
+.job-detail-headers {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+}
+
+.job-detail-values {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.careercards {
+  padding: 32px;
+}
+
+.job-detail-headers .col,
+.job-detail-values .col {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .careerheading {
+    font-size: 50px;
+    line-height: 70px;
+  }
+
+  .careerp {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .cardhead {
+    font-size: 18px;
+  }
+
+  .cardsecondhead {
+    font-size: 28px;
+  }
+
+  .careerbutton {
+    font-size: 15px;
+    padding: 5px 15px;
+  }
+
+  .job {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .careerheading {
+    font-size: 42px;
+    line-height: 60px;
+  }
+
+  .careerp {
+    font-size: 16px;
+  }
+
+  .cardhead {
+    font-size: 16px;
+  }
+
+  .cardsecondhead {
+    font-size: 24px;
+  }
+
+  .careerbutton {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .job {
+    font-size: 20px;
+  }
+
+  .career-card {
+    padding: 10px;
+  }
+
+  .careercards {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .careerheading {
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .careerp {
+    font-size: 14px;
+  }
+
+  .cardhead {
+    font-size: 14px;
+    margin-top: 7%;
+  }
+
+  .cardsecondhead {
+    font-size: 20px;
+    margin-top: 3%;
+  }
+
+  .careerbutton {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .job {
+    font-size: 18px;
+  }
+
+  .career-card {
+    padding: 8px;
+  }
+
+  .careercards {
+    padding: 10px;
+  }
+
+  .job-detail-headers {
+    font-size: 12px;
+  }
+
+  .job-detail-values {
+    font-size: 16px;
+  }
+}

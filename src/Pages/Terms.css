@@ -1,0 +1,165 @@
+.terms-container {
+    padding: 40px;
+  }
+  
+  /* Heading */
+  .terms-heading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 64px; /* Default size for larger screens */
+    font-weight: 600;
+    line-height: 96px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    background-color: #097B79;
+    color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  /* Section styling */
+  .terms-content section {
+    margin-bottom: 20px;
+  }
+  
+  .terms-content h2 {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px; /* Default size for larger screens */
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #303030;
+  }
+  
+  .terms-content p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px; /* Default size for larger screens */
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-align: justify;
+    color: #000000;
+  }
+  
+  /* List styling */
+  .terms-list {
+    list-style-type: disc; /* Use bullets */
+    margin-left: 20px; /* Indent the list */
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  /* Contact info styling */
+  .terms-info {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px; /* Default size for larger screens */
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #000000;
+  }
+  .terms1{
+    font-family: 'Barlow', sans-serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: -0.03em;
+text-align: left;
+color: #000000;
+  }
+  .terms2{
+    font-family: 'Barlow', sans-serif;
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: -0.03em;
+text-align: left;
+color: #000000;
+
+  }
+  /* Media Queries for Responsive Design */
+  @media (max-width: 1200px) {
+    .terms-heading {
+      font-size: 48px; /* Adjust heading size for medium screens */
+      line-height: 70px; /* Adjust line-height */
+      padding: 20px; /* Reduce padding */
+    }
+  .terms2, .terms1{
+    font-size: 18px;
+  }
+    .terms-content h2 {
+      font-size: 28px; /* Adjust section heading size */
+      line-height: 40px; /* Adjust line-height */
+    }
+  
+    .terms-content p {
+      font-size: 18px;
+      line-height: 28px; 
+    }
+  
+    .terms-info {
+      font-size: 18px; 
+    }
+  
+    .terms-container {
+      padding: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .terms-heading {
+      font-size: 36px; /* Smaller heading size for smaller screens */
+      line-height: 56px; /* Adjust line-height */
+      padding: 15px; /* Further reduce padding */
+    }
+    .terms2, .terms1{
+        font-size: 16px;
+      }
+    .terms-content h2 {
+      font-size: 24px; /* Smaller section heading size */
+      line-height: 36px; /* Adjust line-height */
+    }
+  
+    .terms-content p {
+      font-size: 16px; /* Smaller paragraph font size */
+      line-height: 26px; /* Adjust line-height */
+    }
+  
+    .terms-info {
+      font-size: 16px; /* Smaller contact info font size */
+    }
+  
+    .terms-container {
+      padding: 32px; /* Further reduce container padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .terms-heading {
+      font-size: 28px; /* Smallest heading size */
+      line-height: 40px; /* Adjust line-height */
+      padding: 28px; /* Minimal padding */
+    }
+    .terms2, .terms1{
+        font-size: 14px;
+      }
+  
+    .terms-content h2 {
+      font-size: 20px; /* Smallest section heading size */
+      line-height: 30px; /* Adjust line-height */
+    }
+  
+    .terms-content p {
+      font-size: 14px; /* Smallest paragraph font size */
+      line-height: 24px; /* Adjust line-height */
+    }
+  
+    .terms-info {
+      font-size: 14px; /* Smallest contact info font size */
+    }
+  
+    .terms-container {
+      padding: 15px; 
+    }
+  }
+  

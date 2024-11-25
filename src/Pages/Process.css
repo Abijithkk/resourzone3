@@ -1,0 +1,234 @@
+.process-container {
+    width: 100%;
+    padding: 40px;
+    overflow-x: hidden;
+    position: relative; /* Needed for pseudo-element positioning */
+  }
+  
+  .process-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 909px;
+    top: 190px;
+    gap: 0px;
+    opacity: 0.2px;    
+    background-image: url('../images/processbg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Adjust position */
+    opacity: 0.2; /* Adjust to control background image opacity */
+    z-index: -1; /* Place the background behind the content */
+  }
+  
+
+.process-header {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.process-title {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    color: #5C5C5C;
+    text-align: center;
+}
+
+.process-subtitle {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    color: #22CC9D;
+    text-align: center;
+}
+
+.process-description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    font-family: 'Barlow', sans-serif;
+    color: #000000;
+}
+
+.process-text-heading {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: -0.03em;
+    color: #000000;
+}
+
+.process-row {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    align-items: center;
+    animation-duration: 0.5s; 
+    animation-delay: 0.3s; 
+}
+
+.process-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+}
+
+.process-image img {
+    width: 168px;
+    height: 144px;
+}
+
+.process-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    color: #000000;
+    margin-top: 2%;
+}
+
+/* Align content on the left side */
+.left-align {
+    justify-content: flex-start;
+}
+
+.right-align {
+    justify-content: flex-end;
+}
+
+.left-vector-container,
+.right-vector-container {
+    margin: 0% 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 1024px) {
+    .process-content {
+        width: 80%;
+        gap: 15px;
+    }
+    .process-container {
+        padding: 30px;
+    }
+
+    .process-title {
+        font-size: 24px;
+    }
+
+    .process-subtitle {
+        font-size: 28px;
+    }
+
+    .process-description,
+    .process-text {
+        font-size: 18px;
+    }
+
+    .process-text-heading {
+        font-size: 24px;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    .process-row {
+        flex-direction: column;
+        text-align: center;
+        margin: 30px auto;
+    }
+    .process-container {
+        padding: 20px;
+        height: auto;
+    }
+
+    .left-align, .right-align {
+        justify-content: center;
+    }
+
+    .process-content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .process-title {
+        font-size: 20px;
+    }
+
+    .process-subtitle {
+        font-size: 24px;
+    }
+
+    .process-description,
+    .process-text {
+        font-size: 16px;
+    }
+
+    .process-text-heading {
+        font-size: 22px;
+    }
+
+    .process-image img {
+        width: 150px;
+        height: auto;
+    }
+
+    .left-vector-container img,
+    .right-vector-container img {
+        display: none;
+    }
+    .process-container::before{
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-title {
+        font-size: 16px;
+    }
+    .process-container {
+        padding: 17px;
+        overflow-y: hidden;
+        
+    }
+    .process-subtitle {
+        font-size: 20px;
+    }
+
+    .process-description,
+    .process-text {
+        font-size: 14px;
+    }
+
+    .process-text-heading {
+        font-size: 20px;
+    }
+
+    .process-content {
+        width: 100%;
+    }
+
+    .process-image img {
+        width: 100px;
+    }
+
+    .left-vector-container img,
+    .right-vector-container img {
+        display: none;
+    }
+}

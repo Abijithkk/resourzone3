@@ -1,0 +1,207 @@
+/* About.css */
+.about-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    padding-right: 50px; /* Add some padding to the right side */
+    color: white; /* White text for contrast */
+    overflow: hidden;
+  }
+  /* Add animation timing or overrides if needed */
+.who, .abouthead, .aboutpara {
+  animation-duration: 1s;
+}
+
+  .who{
+    font-family: 'Albert Sans', sans-serif;
+font-size: 28px;
+font-weight: 600;
+line-height: 30px;
+letter-spacing: -0.03em;
+text-align: center;
+color:  #22CC9D;
+  }
+  
+  .about-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/59ec2fb58611e35bd7ecd04ba36dec43.jpeg') center/cover no-repeat;
+    filter: brightness(70%);
+    z-index: -2;
+  }
+  
+  .about-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(17, 102, 79, 0.4) 0%, #11664F 100%);
+    z-index: -1;
+  }
+  
+  .about-content {
+    position: relative;
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 10px;
+  }
+  
+  /* Headline styling */
+  .abouthead {
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    text-align: center;
+  }
+  
+  /* Paragraph styling */
+  .aboutpara {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    margin-top: 3%;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1200px) {
+    .about-container {
+      padding-right: 30px;
+    }
+  
+    .about-content {
+      max-width: 500px;
+    }
+  
+    .abouthead {
+      font-size: 28px;
+      line-height: 42px;
+    }
+  
+    .aboutpara {
+      font-size: 18px;
+      line-height: 32px;
+    }
+    .who {
+        font-size: 24px;
+        line-height: 32px;
+      }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .about-container {
+      justify-content: center; /* Center content for medium screens */
+      padding-right: 20px;
+    }
+  
+    .about-content {
+      max-width: 450px;
+      padding: 20px;
+    }
+  
+    .abouthead {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  
+    .aboutpara {
+      font-size: 16px;
+      line-height: 30px;
+    }
+    .who {
+        font-size: 22px;
+        line-height: 30px;
+      }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-container {
+      padding-right: 10px;
+    }
+  
+    .about-content {
+      max-width: 400px;
+      padding: 20px;
+    }
+  
+    .abouthead {
+      font-size: 24px;
+      line-height: 38px;
+    }
+  
+    .aboutpara {
+      font-size: 16px;
+      line-height: 28px;
+    }
+    .who {
+        font-size: 22px;
+        line-height: 28px;
+      }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .about-container {
+      padding: 0 10px; /* Reduce padding for small screens */
+    }
+  
+    .about-content {
+      max-width: 100%;
+      padding: 15px;
+    }
+    .about-container {
+      padding-right: 10px;
+    }
+  
+    .abouthead {
+      font-size: 22px;
+      line-height: 36px;
+    }
+  
+    .aboutpara {
+      font-size: 15px;
+      line-height: 26px;
+    }
+    .who {
+        font-size: 22px;
+        line-height: 26px;
+      }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .about-container {
+      justify-content: center;
+    }
+  
+    .about-content {
+      padding: 13px;
+    }
+  
+    .abouthead {
+      font-size: 20px;
+      line-height: 34px;
+    }
+  
+    .aboutpara {
+      font-size: 14px;
+      line-height: 24px;
+    }
+    .who {
+        font-size: 21px;
+        line-height: 24px;
+      }
+  }
+  

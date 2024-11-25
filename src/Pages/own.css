@@ -1,0 +1,361 @@
+/* Container for the entire page */
+.own-page {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  margin-top: 0%;
+}
+
+/* Left and Right columns */
+.left-col, .right-col {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.circle-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+}
+.styled-boxes{
+  margin-top: 7%;
+}
+/* Base style for all circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Inner full circle with image */
+.inner-circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(100, 150, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.circle-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Left semi-circle */
+.left-semi-circle {
+  width: 120px;
+  height: 120px;
+  clip-path: inset(0 50% 0 0);
+  background-color: rgba(100, 150, 255, 0.5);
+}
+
+/* Right semi-circle */
+.right-semi-circle {
+  width: 150px;
+  height: 150px;
+  clip-path: inset(0 0 0 50%);
+  background-color: rgba(100, 150, 255, 0.3);
+}
+
+/* Outline-only, larger right-aligned semi-circle */
+.right-outline-semi-circle {
+  width: 200px;
+  height: 200px;
+  clip-path: inset(0 0 0 50%);
+  border: 3px solid rgba(100, 150, 255, 0.8); /* Outline color */
+  background-color: transparent; /* No fill */
+  z-index: 0;
+}
+/* Outline-only, larger right-aligned semi-circle with dots */
+.right-outline-semi-circle {
+  width: 200px;
+  height: 200px;
+  clip-path: inset(0 0 0 50%);
+  border: 3px solid rgba(100, 150, 255, 0.8); /* Outline color */
+  background-color: transparent; /* No fill */
+  position: relative;
+  z-index: 0;
+}
+
+/* Dot styles */
+.right-outline-semi-circle::before,
+.right-outline-semi-circle::after,
+.right-outline-semi-circle .dot1,
+.right-outline-semi-circle .dot2 {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(100, 150, 255, 0.8); /* Dot color */
+  border-radius: 50%;
+}
+
+/* Position each dot */
+.right-outline-semi-circle::before { /* Top dot */
+  top: 0;
+  right: 25%;
+  transform: translateX(50%);
+}
+
+
+.right-outline-semi-circle::after { /* Bottom dot */
+  bottom: 0;
+  right: 25%;
+  transform: translateX(50%);
+}
+
+.right-outline-semi-circle .dot1 { /* Left dot */
+  top: 25%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.right-outline-semi-circle .dot2 { /* Right dot */
+  bottom: 25%;
+  right: 0;
+  transform: translateY(50%);
+}
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: -58%;
+}
+
+.styled-box {
+  position: relative;
+  width: 187.93px;
+  height: 47.48px;
+  border-radius: 5.93px 98.91px 98.91px 5.93px;
+  box-shadow: 0px 1.98px 9.89px 0px rgba(0, 0, 0, 0.25);
+  background-color: #b61313;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30%;
+}
+
+/* Outer filled circle */
+.styled-box::before {
+  content: '';
+  position: absolute;
+  width: 60px; /* Adjust size of the outer filled circle */
+  height: 60px;
+  background-color: #343434; /* Outer circle color */
+  border-radius: 50%;
+  top: 50%;
+  left: 10px; /* Adjust horizontal positioning */
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Middle outlined circle */
+.styled-box::after {
+  content: '';
+  position: absolute;
+  width: 50px; /* Slightly smaller than outer circle */
+  height: 50px;
+  border: 2px solid #b61313; /* Outline color */
+  border-radius: 50%;
+  top: 50%;
+  left: 15px; /* Adjust to center within outer circle */
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: transparent;
+}
+
+/* Inner filled circle with image */
+.styled-box .inner-circle {
+  position: absolute;
+  width: 40px; /* Adjust size of the inner circle */
+  height: 40px;
+  background-color: #ffffff; /* Inner circle color */
+  border-radius: 50%;
+  top: 50%;
+  left: 20px; /* Adjust to center within outlined circle */
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.styled-box .inner-circle img {
+  width: 70%; /* Adjust size of image inside circle */
+  height: 70%;
+  object-fit: contain;
+}
+
+.end-circle {
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Circle color */
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.arrow {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  transform: translateX(1px); /* Adjust for alignment */
+}
+.box-name {
+  flex: 1;
+  text-align: center;
+  margin-left: 50%;
+}
+
+
+
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .inner-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circle-image {
+    width: 70%;
+    height: 70%;
+  }
+
+  .left-semi-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .right-semi-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .right-outline-semi-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .styled-box {
+    width: 160px;
+    height: 40px;
+  }
+
+  .styled-box::before {
+    width: 50px;
+    height: 50px;
+    left: 8px;
+  }
+
+  .styled-box::after {
+    width: 40px;
+    height: 40px;
+    left: 12px;
+  }
+
+  .styled-box .inner-circle {
+    width: 30px;
+    height: 30px;
+    left: 16px;
+  }
+
+  .end-circle {
+    width: 28px;
+    height: 28px;
+  }
+  .circle-container{
+    margin-left: -45%;
+  }
+  .styled-boxes{
+    margin-left: 30%;
+  }
+
+  .arrow {
+    font-size: 10px;
+  }
+
+  .box-name {
+    margin-left: 45%;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .inner-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle-image {
+    width: 60%;
+    height: 60%;
+  }
+
+  .left-semi-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .right-semi-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .right-outline-semi-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .styled-box {
+    width: 130px;
+    height: 35px;
+  }
+  .circle-container{
+    margin-left: -45%;
+  }
+  .styled-boxes{
+    margin-left: 30%;
+  }
+
+  .styled-box::before {
+    width: 40px;
+    height: 40px;
+    left: 6px;
+  }
+
+  .styled-box::after {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+  }
+
+  .styled-box .inner-circle {
+    width: 25px;
+    height: 25px;
+    left: 14px;
+  }
+
+  .end-circle {
+    width: 24px;
+    height: 24px;
+  }
+
+  .arrow {
+    font-size: 8px;
+  }
+
+  .box-name {
+    margin-left: 40%;
+  }
+}

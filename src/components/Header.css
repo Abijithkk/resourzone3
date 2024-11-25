@@ -1,0 +1,253 @@
+.header {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: #097B79;
+  padding: 0 20px;
+  height: 90px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+
+.triangle-element {
+  position: relative;
+  width: 6vw; /* Responsive base width */
+  height: 90px; /* Matches a dynamic header height */
+  overflow: hidden;
+}
+
+.triangle {
+  width: 100%;
+  height: 100%;
+  background-color: #22CC9D; /* Adjust color to match branding */
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0.8;
+}
+
+.triangle-element:hover .triangle {
+  opacity: 1;
+  transform: rotate(3deg); /* Subtle rotation on hover */
+}
+
+.header2 {
+  box-shadow: 0px 4px 16px 0px #0000001A;
+  background-color: #11664F99;
+  padding: 0 20px;
+  height: 90px;
+  z-index: 2;
+}
+
+.logo-container {
+  margin-left: 10px;
+  height: auto;
+  gap: 12px; /* Adjusts spacing between logo and triangle */
+
+}
+
+
+
+
+
+/* Removes color change on active and focus states */
+.no-color-change {
+  color: inherit !important;
+}
+
+.no-color-change:active,
+.no-color-change:focus,
+.no-color-change:hover {
+  color: inherit !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+.navbar-toggler {
+  background: linear-gradient(135deg, #22cc9d, #0e9d73) !important;
+  border: none !important;
+  width: 50px !important;
+  height: 50px !important;
+  align-items: center;
+  justify-content: center !important;
+  box-shadow: -10px -10px 10px 0px #1DB188 inset, 10px 10px 10px 0px #08E2A6 inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  outline: none;
+  margin-left: 1% !important;
+}
+
+
+.logo {
+  margin-right: 20px;
+  width: auto;
+height: 68px;
+
+gap: 0px;
+opacity: 1px;
+
+}
+.navbar-nav{
+  align-items: center !important;
+}
+/* Hide the default dropdown icon */
+.no-dropdown-icon .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Adjust padding and alignment for dropdown */
+.no-dropdown-icon .dropdown-toggle {
+  padding: 0.5rem 0.75rem; /* Match Nav.Link padding */
+  margin-right: 44px; /* Same spacing as other links */
+  color: inherit;
+  font-weight: 600; /* Match font weight */
+}
+
+/* Box shadow for dropdown menu */
+#resources-dropdown .dropdown-menu {
+ 
+border: none;
+}
+.navbar-nav .dropdown-menu{
+  box-shadow: 0px 4px 4px 0px #00000040 !important;
+}
+
+.dropdown-item{
+  font-family: 'Albert Sans', sans-serif;
+font-size: 20px;
+font-weight: 600 !important;
+line-height: 30px;
+letter-spacing: -0.03em;
+text-align: left;
+color: #000000 !important;
+}
+/* Style for navigation links */
+.nav-link-custom {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-right: 44px;
+  white-space: nowrap;
+  color: #FFFFFF !important;
+}
+
+/* Remove extra margin on the last link */
+.nav-link-custom:last-child {
+  margin-right: 0;
+}
+
+/* Custom button styles */
+.custom-button {
+  padding: 8px 32px;
+  background-color: #22CC9D;
+  color: white;
+  border-radius: 4px;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+  box-shadow: -10px -10px 10px 0px #1DB188 inset, 10px 10px 10px 0px #08E2A6 inset;
+}
+
+
+/* For tablets and smaller screens */
+@media (max-width: 992px) {
+  .nav-link-custom, .no-dropdown-icon .dropdown-toggle {
+    margin-right: 30px;
+  }
+  .header {
+    height: 100%;
+  }
+  .navbar-collapse {
+    position: absolute; /* Makes the menu overlay the content */
+    top: 100%; /* Aligns the dropdown with the bottom of the header */
+    left: 0;
+    right: 0;
+    background-color: #097B79; /* Matches the header background */
+    z-index: 2; /* Ensures it's above content but below other elements like modals */
+    box-shadow: 0px 4px 16px 0px #0000001A;
+    transition: all 0.3s ease-in-out; /* Smooth open/close animation */
+  }
+  .logo-container {
+    margin-left: -13px;
+  }
+  .triangle-element {
+   display: none;
+  }
+  .no-dropdown-icon .dropdown-toggle{
+    margin-left: -11px;
+  }
+  .navbar-nav{
+    align-items: start !important;
+  }
+}
+
+/* For smaller tablets */
+@media (max-width: 768px) {
+  .nav-link-custom, .no-dropdown-icon .dropdown-toggle {
+    font-size: 18px;
+    margin-left: 20px !important;
+  }
+  .header {
+    height: 100%;
+  }
+  .header2{
+    height: 100%;
+  }
+  .custom-button {
+    font-size: 18px;
+    padding: 6px 24px;
+    margin-left: 20px;
+  }
+  .no-dropdown-icon .dropdown-toggle{
+    margin-left: -11px !important;
+  }
+  .navbar-nav{
+    align-items: start !important;
+  }
+  .triangle-element {
+    position: relative;
+    width: 6vw; /* Responsive base width */
+    height: 90px; /* Matches a dynamic header height */
+    overflow: hidden;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .nav-link-custom, .no-dropdown-icon .dropdown-toggle {
+    font-size: 16px;
+    margin-left: 15px !important;
+    text-align: left;
+  }
+  .no-dropdown-icon .dropdown-toggle{
+    margin-left: -11px !important;
+  }
+  .header2 {
+    height: 100%;
+  }
+  .header{
+    height: 100%;
+  }
+  .custom-button {
+    font-size: 16px;
+    padding: 5px 20px;
+    margin-left: 15px;
+  }
+  .logo{
+    height: 78px;
+  }
+  /* Dropdown menu width adjustment for small screens */
+  .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .navbar-nav{
+    align-items: start !important;
+  }
+}

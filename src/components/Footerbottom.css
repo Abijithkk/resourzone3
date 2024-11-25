@@ -1,0 +1,47 @@
+/* Bottom Section */
+.footer-bottom {
+    padding: 15px 0;
+    background-color: #22CC9D;
+    margin-top: 0;
+  }
+  
+  .footer-bottom-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    font-family: 'Albert Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    margin-top: 1%;
+    flex-wrap: wrap; /* Allows text to wrap on smaller screens */
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Add separator only between items */
+  .footer-bottom-text > *:not(:last-child)::after {
+    content: "|";
+    margin: 0 8px;
+    color: black;
+  }
+  
+  /* Hide separators on screens smaller than 768px */
+  @media (max-width: 768px) {
+    .footer-bottom-text > *:not(:last-child)::after {
+      content: "";
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .footer-bottom-text {
+      font-size: 11px;
+    }
+  }
+  
