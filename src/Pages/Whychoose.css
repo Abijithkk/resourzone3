@@ -180,7 +180,7 @@ color: #22CC9D;
     line-height: 30px;
     letter-spacing: -0.03em;
     text-align: center;
-    color: #A3A3A3;
+    color: rgba(0, 0, 0, 0.918);
   }
   
   @media (max-width: 768px) {

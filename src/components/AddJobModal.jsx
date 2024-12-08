@@ -3,6 +3,7 @@ import { Modal, Form, Button } from 'react-bootstrap';
 import { toast, ToastContainer } from 'react-toastify';
 import { addJobs } from '../services/allApi';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
 
 const AddJobModal = ({ show, onHide, getallJobs, setLoading }) => {
   const [formData, setFormData] = useState({
@@ -27,10 +28,17 @@ const AddJobModal = ({ show, onHide, getallJobs, setLoading }) => {
     try {
       const result = await addJobs(dataToSubmit)
       if (result.status === 201) {
-
-        toast.success("job added successfully")
+        
+        Swal.fire({
+          title: 'Success!',
+          text: 'The job has been added successfully.',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        });
         setLoading(false)
-        getallJobs()
+        setTimeout(() => {
+          getallJobs();
+        }, 1000);
         onHide()
         setFormData({
           jobRole: '',
@@ -42,7 +50,12 @@ const AddJobModal = ({ show, onHide, getallJobs, setLoading }) => {
         })
       }
     } catch (error) {
-      toast.error('something went wrong at adding')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong',
+        icon: 'error',
+        confirmButtonText: 'Done'
+      });
       console.log(error)
     }
     finally {

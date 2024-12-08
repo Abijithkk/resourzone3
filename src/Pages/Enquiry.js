@@ -66,7 +66,7 @@ function Enquiry() {
     <div className="enquiry-container">
       <ToastContainer />
       {isLoading && (
-        <div className="overlay2">
+        <div className="overlay3">
           <Spinner animation="border" role="status" />
         </div>
       )}

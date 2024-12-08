@@ -69,16 +69,17 @@ export const getAlljobs = async () => {
 
 
 
-export const Adminlogin = async (user) => {
-    return await commonApi('POST', `${BASE_URL}/auth/login`, user, "")
+  export const Adminlogin = async (user) => {
+    return await commonApi('POST', `${BASE_URL}/auth/login`, user, "", false);
 }
+
 
 export const addJobs = async (user) => {
     return await commonApi('POST', `${BASE_URL}/admin-jobs/add`, user)
 }
 
 export const getAllJobs = async () => {
-    return await commonApi('GET', `${BASE_URL}/admin-jobs/jobs`, "", "")
+    return await commonApi('GET', `${BASE_URL}/admin-jobs/jobs`, "", "",false)
 }
 
 export const editJobs=async(reqBody,id)=>{
@@ -90,7 +91,7 @@ export const deleteJobs=async(id)=>{
 }
 
 export const getAllusers = async () => {
-    return await commonApi('GET', `${BASE_URL}/user-jobs/get/usersdts`, "")
+    return await commonApi('GET', `${BASE_URL}/user-jobs/get/usersdts`, "",)
 }
 export const getAllenquiries = async () => {
     return await commonApi('GET', `${BASE_URL}/user-jobs/get/user/enquiry`, "")

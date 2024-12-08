@@ -4,6 +4,14 @@ import { editJobs } from '../services/allApi';
 import { toast, ToastContainer } from 'react-toastify';
 import { FormControlLabel, RadioGroup, FormLabel, FormControl, Radio } from '@mui/material';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+import Dialog from '@mui/material/Dialog';
+import { useTheme } from '@mui/material/styles';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const EditModal = ({ showEdit, onEditHide, getallJobs, SelectedJob, setLoading }) => {
   const [formData, setFormData] = useState({
@@ -14,6 +22,9 @@ const EditModal = ({ showEdit, onEditHide, getallJobs, SelectedJob, setLoading }
     deadline_date: '',
     status: ''
   });
+  const [dialogopen, setDialogopen] = useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     if (SelectedJob) {
@@ -28,14 +39,31 @@ const EditModal = ({ showEdit, onEditHide, getallJobs, SelectedJob, setLoading }
     }
   }, [SelectedJob]);
 
+  const handleDialogOpen = () => {
+    setDialogopen(true);
+  };
+
+  const handleDialogClose = () => {
+    setDialogopen(false);
+  };
+
+
   const handleEditJobs = async (id) => {
     setLoading(true);
     try {
       const result = await editJobs(formData, id);
       if (result.status === 200) {
         setLoading(false);
-        toast.success("Job updated successfully");
-        getallJobs();
+      
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your edit was successful.',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        });
+        setTimeout(() => {
+          getallJobs();
+        }, 1000);
         onEditHide();
         setFormData({
           jobRole: '',
@@ -47,7 +75,12 @@ const EditModal = ({ showEdit, onEditHide, getallJobs, SelectedJob, setLoading }
         });
       }
     } catch (error) {
-      toast.error('Something went wrong with editing');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong',
+        icon: 'error',
+        confirmButtonText: 'Done'
+      });
       console.log(error);
     } finally {
       setLoading(false);
@@ -164,12 +197,55 @@ const EditModal = ({ showEdit, onEditHide, getallJobs, SelectedJob, setLoading }
             variant="success"
             className="px-8 py-2 rounded font-normal"
             style={{ backgroundColor: '#10b981', border: 'none' }}
-            onClick={() => handleEditJobs(SelectedJob._id)}
+            onClick={handleDialogOpen}
           >
-            Edit Job
+            Save
           </Button>
         </Modal.Footer>
       </Modal>
+       {/* edit Confirmation Dialog */}
+       <Dialog
+  open={dialogopen}
+  onClose={handleDialogClose}
+  fullScreen={fullScreen}
+>
+  <DialogTitle>Confirm Edit</DialogTitle>
+  <DialogContent>
+    <DialogContentText>
+      Are you sure you want to Save the changes?
+    </DialogContentText>
+  </DialogContent>
+  <DialogActions>
+    <Button
+      style={{
+        backgroundColor: 'red',
+        color: 'white',
+        border: 'none',
+        padding: '8px 16px',
+        fontWeight: 'bold',
+        borderRadius: '4px',
+      }}
+      onClick={handleDialogClose}
+    >
+      Cancel
+    </Button>
+    <Button
+      onClick={() => handleEditJobs(SelectedJob._id)}
+      autoFocus
+      style={{
+        backgroundColor: 'green',
+        color: 'white',
+        border: 'none',
+        padding: '8px 16px',
+        fontWeight: 'bold',
+        borderRadius: '4px',
+      }}
+    >
+      Yes, Confirm
+    </Button>
+  </DialogActions>
+</Dialog>
+
       <ToastContainer />
     </>
   );

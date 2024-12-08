@@ -28,14 +28,15 @@ function App() {
   // Determine if Header/Footer/Footerbottom should be shown
   const showHeaderFooter = !isAdminPage && !isNoHeaderFooterPage;
 
-  const [loading, setLoading] = useState(location.pathname !== '/');
+  const [loading, setLoading] = useState(location.pathname !== '/' && location.pathname !== '/career');
 
   useEffect(() => {
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/' && location.pathname !== '/career') {
       const timer = setTimeout(() => setLoading(false), 1000);
       return () => clearTimeout(timer);
     }
   }, [location.pathname]);
+
 
   return (
     <div className="App">

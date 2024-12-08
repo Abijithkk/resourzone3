@@ -53,6 +53,7 @@ function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Detect if device is touch-enabled
   useEffect(() => {
@@ -61,22 +62,33 @@ function Testimonials() {
 
   // Automatic sliding functionality with animation trigger
   useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimate(true);  // Start animation
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
-        );
-        setAnimate(false); // Reset animation after the transition
-      }, 500);
-    }, 3000); 
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setAnimate(true); // Start animation
+        setTimeout(() => {
+          setCurrentIndex((prevIndex) =>
+            prevIndex === testimonialsData.length - 1 ? 0 : prevIndex + 1
+          );
+          setAnimate(false); // Reset animation after the transition
+        }, 500);
+      }, 2000);
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, currentIndex]);
+
+  const handleInteractionStart = () => {
+    setIsPaused(true); // Stop the automatic transition
+  };
+
+  const handleInteractionEnd = () => {
+    setIsPaused(false); // Restart the automatic transition
+  };
+
 
   // Reset animation state after transition
   useEffect(() => {
-    const timeout = setTimeout(() => setAnimate(false), 500); // Reset after animation
+    const timeout = setTimeout(() => setAnimate(false), 10); // Reset after animation
     return () => clearTimeout(timeout);
   }, [currentIndex]);
 
@@ -115,7 +127,12 @@ function Testimonials() {
   };
 
   return (
-    <div className="testimonial-container">
+    <div className="testimonial-container"
+    onMouseEnter={handleInteractionStart} // Pause on hover
+    onMouseLeave={handleInteractionEnd} // Resume on mouse leave
+    onTouchStart={handleInteractionStart} // Pause on touch
+    onTouchEnd={handleInteractionEnd} // Resume on touch end
+    >
       <p className="testimonial-head">Client Testimonials</p>
       <p className="testimonial-subhead">Our Client’s Success Stories</p>
     

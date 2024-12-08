@@ -17,7 +17,7 @@ function LandingPage() {
 
   return (
     <Container style={{zIndex:'1'}} fluid className="landing-page" ref={ref}>
-      <Row className="align-items-center">
+      <Row  className="align-items-center " style={{marginTop:'-3%'}}>
         <Col md={6} className="text-content">
           <motion.span
             className="lanhead"

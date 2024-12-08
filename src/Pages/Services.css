@@ -172,10 +172,16 @@
     line-height: 28px;
     letter-spacing: -0.03em;
     text-align: justify;
+    text-justify: inter-word;
+    text-align-last: start;
     color: #000000;
     white-space: normal;
     margin-top: 6%;
+    word-break: break-word;
+    hyphens: auto; /* Adds hyphenation */
 }
+
+
 
 .services-container2::-webkit-scrollbar {
     display: none;

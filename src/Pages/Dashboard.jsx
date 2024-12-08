@@ -21,6 +21,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addJobs, deleteJobs, getAllJobs } from '../services/allApi';
 import { ClipLoader } from 'react-spinners';
+import Swal from 'sweetalert2';
+
 
 function Dashboard() {
   const [selectedRowIndex, setSelectedRowIndex] = useState(null);
@@ -100,13 +102,26 @@ function Dashboard() {
       const result = await deleteJobs(id);
       if (result.status === 200) {
         setLoading(false);
-        toast.success('Job deleted successfully');
-        getallJobs();
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your Deletion was successful.',
+          icon: 'success',
+          confirmButtonText: 'Done'
+        });
+        setTimeout(() => {
+          getallJobs();
+        }, 1000);
+        
         setDialogopen(false);
         setSelectedJob('');
       }
     } catch (error) {
-      toast.error('Something went wrong on deletion');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong',
+        icon: 'error',
+        confirmButtonText: 'Done'
+      });
       setSelectedJob('');
       console.log(error);
     } finally {
